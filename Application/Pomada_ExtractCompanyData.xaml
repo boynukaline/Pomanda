@@ -1,4 +1,14 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Pomada_ExtractCompanyData" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1192,1642" sap2010:WorkflowViewState.IdRef="Pomada_ExtractCompanyData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Pomada_ExtractCompanyData" this:Pomada_ExtractCompanyData.in_MaxExtractionCount="100" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_TransactionNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="in_MaxExtractionCount" Type="InArgument(x:Int32)" />
+    <x:Property Name="out_SampleDT" Type="OutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1192,1653</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Pomada_ExtractCompanyData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -98,43 +108,33 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pomada_ExtractCompanyData" sap:VirtualizedContainerService.HintSize="594,1577" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pomada_ExtractCompanyData" sap:VirtualizedContainerService.HintSize="668,1588" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="532,1466" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="Never" ScopeGuid="35492b15-509f-450e-b97b-82e7e6f1faf6" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="606,1477" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" OpenMode="Never" ScopeGuid="35492b15-509f-450e-b97b-82e7e6f1faf6" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="498,1249" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1260" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="sd:DataTable" Name="dt_sample" />
-              <Variable x:TypeArguments="x:String" Default="107" Name="CompanyCount" />
+              <Variable x:TypeArguments="x:String" Name="companyCount" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:GetActiveWindow ApplicationWindow="{x:Null}" DisplayName="Get Active Window" sap:VirtualizedContainerService.HintSize="436,94" sap2010:WorkflowViewState.IdRef="GetActiveWindow_3">
-              <ui:GetActiveWindow.Body>
-                <ActivityAction x:TypeArguments="x:Object">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
-                  </ActivityAction.Argument>
-                </ActivityAction>
-              </ui:GetActiveWindow.Body>
-            </ui:GetActiveWindow>
-            <uix:NGetText DisplayName="Get Text '107 Companies'" sap:VirtualizedContainerService.HintSize="436,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="35492b15-509f-450e-b97b-82e7e6f1faf6" TextString="[CompanyCount]" Version="V3">
+            <uix:NGetText DisplayName="Get Text: Total Company Count" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="35492b15-509f-450e-b97b-82e7e6f1faf6" TextString="[CompanyCount]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/powersearch/company" CvTextArea="389, 279, 102, 17" CvType="AnyWordGroup" DesignTimeRectangle="390, 277, 101, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'107 Companies'" FullSelectorArgument="&lt;webctrl class='search-count' parentid='company_search_tablet_view' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='search-count' parentid='company_search_tablet_view' tag='SPAN' type='' /&gt;" Guid="c5475acf-a94d-44d0-9956-29c6ed3875a0" ImageBase64="" InformativeScreenshot="b67c57adc9728fd9894448efcef2765d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NGetText.Target>
             </uix:NGetText>
-            <Assign sap:VirtualizedContainerService.HintSize="436,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[CompanyCount]</OutArgument>
               </Assign.To>
@@ -142,19 +142,33 @@
                 <InArgument x:TypeArguments="x:String">[CompanyCount.Trim.Split()(0)]</InArgument>
               </Assign.Value>
             </Assign>
-            <Assign sap:VirtualizedContainerService.HintSize="436,82" sap2010:WorkflowViewState.IdRef="Assign_2">
-              <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[CompanyCount]</OutArgument>
-              </Assign.To>
-              <Assign.Value>
-                <InArgument x:TypeArguments="x:String">45</InArgument>
-              </Assign.Value>
-            </Assign>
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="436,237" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Version="V3">
+            <If Condition="[Cint(companyCount) &gt;  in_MaxExtractionCount]" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[companyCount]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_MaxExtractionCount.ToString]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7" />
+              </If.Else>
+            </If>
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll" sap:VirtualizedContainerService.HintSize="510,237" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" Timeout="999999" Version="V3">
               <uix:NMouseScroll.SearchedElement>
                 <uix:SearchedElement>
                   <uix:SearchedElement.Target>
-                    <uix:TargetAnchorable BrowserURL="https://pomanda.com/powersearch/company" CvTextArea="373, 1017, 22, 12" CvTextArgument="107" CvType="Text" DesignTimeRectangle="372, 1015, 24, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'107'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' parentid='company_search_tablet_view' tag='DIV' /&gt;&quot;, CompanyCount)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' parentid='company_search_tablet_view' tag='DIV' type='' class=' row-index' check:innerText='{0}' /&gt;&quot;, CompanyCount)]" Guid="b287ab06-18b5-4217-bc7c-64135489b884" InformativeScreenshot="d1ee2a471311711a7209f21cd800dcc4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
+                    <uix:TargetAnchorable BrowserURL="https://pomanda.com/powersearch/company" CvTextArea="372, 480, 23, 12" CvTextArgument="730" CvType="Text" DesignTimeRectangle="372, 936, 24, 17" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'107'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' parentid='company_search_tablet_view' tag='DIV' parentclass='rt-td tableTd' /&gt;&quot;, companyCount)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' parentid='company_search_tablet_view' tag='DIV' parentclass='rt-td tableTd' type='' class=' row-index' check:text='107' /&gt;&quot;, companyCount)]" Guid="7640cf92-7245-405f-9963-274467666dec" InformativeScreenshot="e25403d661100d6a20f12d5fe72bb939.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                   </uix:SearchedElement.Target>
                   <uix:SearchedElement.Timeout>
                     <InArgument x:TypeArguments="x:Double" />
@@ -162,12 +176,11 @@
                 </uix:SearchedElement>
               </uix:NMouseScroll.SearchedElement>
             </uix:NMouseScroll>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_sample]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='New column 0' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="436,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="[CInt(CompanyCount)]" ScopeIdentifier="35492b15-509f-450e-b97b-82e7e6f1faf6" Version="V3">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[out_SampleDT]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='CompanyName' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Turnover' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='div' idx='9' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="Rows" MaximumResults="[Cint(companyCount)]" ScopeIdentifier="35492b15-509f-450e-b97b-82e7e6f1faf6" Version="V3">
               <uix:NExtractData.Target>
-                <uix:TargetAnchorable DesignTimeRectangle="367, 368, 1541, 676" DesignTimeScaleFactor="1" FriendlyName="'Company NameCredit'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' /&gt;" Guid="5d0517e6-9fac-4f2d-8ba1-0af5a53aeef0" InformativeScreenshot="56240ac5accc1d8bfd67710c9941e788.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                <uix:TargetAnchorable DesignTimeRectangle="367, 368, 1541, 676" DesignTimeScaleFactor="1" FriendlyName="'Company NameCredit'" FullSelectorArgument="&lt;webctrl aria-role='grid' tag='DIV' /&gt;" Guid="9efa9f94-5664-40b7-b6f2-5110c1e13cbc" InformativeScreenshot="b8730427617368010806442599e2d609.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="436,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;dudee&quot;]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
