@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1192,1970</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1192,2167</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Pomada_ExtractCompanyDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -101,23 +101,24 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690,1905" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690,2102" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628,1794" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628,1991" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,1577" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,1774" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
-              <Variable x:TypeArguments="x:String" Default="&quot;PERFECTCLEAN&quot; LIMITED" Name="CompanyName" />
-              <Variable x:TypeArguments="x:String" Name="CompanyNumber" />
-              <Variable x:TypeArguments="x:String" Name="CompanyAddress" />
+              <Variable x:TypeArguments="x:String" Default="&quot;PERFECTCLEAN&quot; LIMITED" Name="companyName" />
+              <Variable x:TypeArguments="x:String" Name="companyNumber" />
+              <Variable x:TypeArguments="x:String" Name="companyAddress" />
+              <Variable x:TypeArguments="x:String" Name="companyWebsite" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -182,6 +183,17 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Website'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyWebsite]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/SC412218/%22m-shine%22-cleaning-service-limited" CvTextArea="420, 417, 114, 14" CvType="AnyWordGroup" DesignTimeRectangle="421, 413, 134, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'http://m-shine.co.uk'" FullSelectorArgument="&lt;webctrl tag='A' class='about-card-text about-website-link' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' class='about-card-text about-website-link' parentclass='about-card-field' type='' /&gt;" Guid="dd139142-8856-4f2a-8814-3adc61a37ab2" ImageBase64="" InformativeScreenshot="42325c617adf7bfe2f3de00d4f7fa654.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArea="419, 394, 51, 12" CvTextArgument="Website" CvType="Text" DesignTimeRectangle="421, 392, 134, 20" ElementType="Text" FriendlyName="'Website'" FullSelectorArgument="&lt;webctrl tag='P' aaname='Website' class='about-card-label mb-0' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='Website' class='about-card-label mb-0' parentclass='about-card-field' type='' check:text='Website' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
             <uix:NGetText DisplayName="Get Text 'Registered Address'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[CompanyAddress]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/07687209/!obac-uk-limited" DesignTimeRectangle="274, 467, 280, 42" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'unit 9'" FullSelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' type='' /&gt;" Guid="f05404c0-d11a-4240-b8df-fea411873dcf" ImageBase64="" InformativeScreenshot="8ec6dc54c19f4faa92bec8393233403c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
@@ -193,7 +205,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[CompanyAddress]" />
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[companyWebsite]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
