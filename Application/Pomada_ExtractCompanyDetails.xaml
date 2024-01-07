@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1192,3095</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1192,3292</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Pomada_ExtractCompanyDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,19 +105,19 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690,3030" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690,3227" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628,2919" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628,3116" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,2702" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,2899" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="&quot;PERFECTCLEAN&quot; LIMITED" Name="companyName" />
               <Variable x:TypeArguments="x:String" Name="companyNumber" />
@@ -128,6 +128,7 @@
               <Variable x:TypeArguments="x:String" Name="outputDirectorsInfo" />
               <Variable x:TypeArguments="x:String" Name="companyTurnover" />
               <Variable x:TypeArguments="x:String" Name="companyOperatingProfit" />
+              <Variable x:TypeArguments="x:String" Name="companyGrossMargin" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -249,14 +250,25 @@
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/SC412218/%22m-shine%22-cleaning-service-limited" DesignTimeRectangle="428, 632, 31, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'-249'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' parentid='operating_profit_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='operating_profit_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' /&gt;" Guid="9cd0d6f0-f428-46bd-a1f6-9622e0e40dba" ImageBase64="" InformativeScreenshot="21637a24ac2dd0e220d413d20d2240ef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="428, 614, 119, 17" ElementType="Text" FriendlyName="'operating profit'" FullSelectorArgument="&lt;webctrl parentid='operating_profit_charts' tag='P' aaname='operating profit' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='operating_profit_charts' tag='P' aaname='operating profit' type='' class='text-uppercase sub-card-name mb-0' check:text='operating profit' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[companyOperatingProfit]" />
+            <uix:NGetText DisplayName="Get Text 'gross margin'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyGrossMargin]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/SC412218/%22m-shine%22-cleaning-service-limited" DesignTimeRectangle="572, 632, 43, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'15.7%'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' parentid='gross_margin_charts' tag='P' isleaf='1' parentclass='d-inline-block align-text-top' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='gross_margin_charts' tag='P' isleaf='1' parentclass='d-inline-block align-text-top' class='sub-card-value mb-0 yellow-color-text' /&gt;" Guid="7d0e23d8-cdcc-41da-85e6-ea0d3978c99a" ImageBase64="" InformativeScreenshot="52fc0beac13631bd4ddccbcb917491c9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="572, 614, 119, 17" ElementType="Text" FriendlyName="'gross margin'" FullSelectorArgument="&lt;webctrl parentid='gross_margin_charts' tag='P' aaname='gross margin' class='text-uppercase sub-card-name mb-0' innertext='gross margin' visibleinnertext='GROSS MARGIN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='gross_margin_charts' tag='P' aaname='gross margin' class='text-uppercase sub-card-name mb-0' innertext='gross margin' visibleinnertext='GROSS MARGIN' type='' check:text='gross margin' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[companyGrossMargin]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
