@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>680.6666666666666,2931.3333333333335</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1192,3095</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Pomada_ExtractCompanyDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,19 +105,19 @@
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690.6666666666666,2866.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="690,3030" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628.6666666666666,2756" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="628,2919" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594.6666666666666,2536.6666666666665" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="594,2702" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="&quot;PERFECTCLEAN&quot; LIMITED" Name="companyName" />
               <Variable x:TypeArguments="x:String" Name="companyNumber" />
@@ -127,13 +127,14 @@
               <Variable x:TypeArguments="sd:DataTable" Name="companyDirectorsDT" />
               <Variable x:TypeArguments="x:String" Name="outputDirectorsInfo" />
               <Variable x:TypeArguments="x:String" Name="companyTurnover" />
+              <Variable x:TypeArguments="x:String" Name="companyOperatingProfit" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'I understand'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Timeout="5" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'I understand'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Timeout="5" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/powersearch/company" CvElementArea="903, 631, 115, 35" CvTextArea="919, 642, 82, 13" CvTextArgument="i understand" CvType="Button" DesignTimeRectangle="904, 634, 113, 31" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'I understand'" FullSelectorArgument="&lt;webctrl parentid='appDiv' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='appDiv' tag='BUTTON' type='' class='' aaname='I understand' check:innerText='I understand' /&gt;" Guid="44918751-f230-40c9-9a4f-9fbe5a28bdb5" InformativeScreenshot="ae1c89440cbcb246fba0198e8ebdea23.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -144,15 +145,15 @@
                 </uix:TargetAnchorable>
               </uix:NClick.Target>
             </uix:NClick>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532.6666666666666,276" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_2">
               <ui:CommentOut.Body>
-                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,196" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[CompanyName]</OutArgument>
                     </Assign.To>
@@ -163,7 +164,7 @@
                 </Sequence>
               </ui:CommentOut.Body>
             </ui:CommentOut>
-            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll '!GOBERUB LTD'" sap:VirtualizedContainerService.HintSize="532.6666666666666,260.6666666666667" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
+            <uix:NMouseScroll KeyModifiers="{x:Null}" Direction="Down" DisplayName="Mouse Scroll '!GOBERUB LTD'" sap:VirtualizedContainerService.HintSize="532,257" sap2010:WorkflowViewState.IdRef="NMouseScroll_1" InteractionMode="HardwareEvents" MovementUnits="10" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
               <uix:NMouseScroll.SearchedElement>
                 <uix:SearchedElement>
                   <uix:SearchedElement.Target>
@@ -178,12 +179,12 @@
                 <uix:TargetAnchorable DesignTimeRectangle="549, 469, 1352, 556" DesignTimeScaleFactor="1.5" FriendlyName="'table'" FullSelectorArgument="&lt;ctrl name='Power Search | Pomanda' role='document' /&gt;&lt;ctrl role='table' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Power Search | Pomanda' role='document' /&gt;&lt;ctrl role='table' automationid='' /&gt;" Guid="f527f361-c2bc-46c1-887d-2be16d830580" InformativeScreenshot="fbb21a38cc22cae8b162eac42c25d7a4.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Power Search | Pomanda - [InPrivate] - Microsoft​ Edge' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" />
               </uix:NMouseScroll.Target>
             </uix:NMouseScroll>
-            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Company Name" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Company Name" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
               <uix:NClick.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/powersearch/company" DesignTimeRectangle="402, 488, 341, 36" DesignTimeScaleFactor="1" FriendlyName="'&quot;PERFECTCLEAN&quot; LIMITED'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='gridcell' tag='DIV' class='rt-td tableTd companyname-col companyname' innertext='{0}' /&gt;&quot;, CompanyName)]" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl aria-role='gridcell' tag='DIV' class='rt-td tableTd companyname-col companyname' innertext='{0}' type='' aaname='' check:text='&amp;quot;PERFECTCLEAN&amp;quot; LIMITED' /&gt;&quot;, CompanyName)]" Guid="11934182-2b8d-460c-abb5-7fdffb371a13" InformativeScreenshot="f36f512b1f23d1ae49f31656b7c510c2.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Power Search | Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NClick.Target>
             </uix:NClick>
-            <uix:NGetText DelayBefore="1" DisplayName="Get Text 'Company Number'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[CompanyNumber]" Version="V3">
+            <uix:NGetText DelayBefore="1" DisplayName="Get Text 'Company Number'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[CompanyNumber]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/14413082/!-heal-ur-tech-ltd" CvTextArea="273, 417, 57, 12" CvType="AnyWordGroup" DesignTimeRectangle="274, 413, 130, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'14413082'" FullSelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0' parentclass='about-card-field' idx='1' /&gt;" FuzzyAccuracy="0.71" FuzzySelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0' parentclass='about-card-field' type='' /&gt;" Guid="32998b06-b56a-41ad-9aad-080126742d0f" ImageBase64="" InformativeScreenshot="6f175d82766f54df003030003776e5ba.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='! Heal Ur Tech Ltd - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive" WaitForReadyArgument="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -194,7 +195,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'Website'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyWebsite]" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'Website'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyWebsite]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/SC412218/%22m-shine%22-cleaning-service-limited" CvTextArea="420, 417, 114, 14" CvType="AnyWordGroup" DesignTimeRectangle="421, 413, 134, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'http://m-shine.co.uk'" FullSelectorArgument="&lt;webctrl tag='A' class='about-card-text about-website-link' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' class='about-card-text about-website-link' parentclass='about-card-field' type='' /&gt;" Guid="dd139142-8856-4f2a-8814-3adc61a37ab2" ImageBase64="" InformativeScreenshot="42325c617adf7bfe2f3de00d4f7fa654.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -205,7 +206,7 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'Registered Address'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[CompanyAddress]" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'Registered Address'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[CompanyAddress]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/07687209/!obac-uk-limited" DesignTimeRectangle="274, 467, 280, 42" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'unit 9'" FullSelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' type='' /&gt;" Guid="f05404c0-d11a-4240-b8df-fea411873dcf" ImageBase64="" InformativeScreenshot="8ec6dc54c19f4faa92bec8393233403c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -216,35 +217,46 @@
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NGetText DisplayName="Get Text 'Next Accounts Due'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyNextAccount]" Version="V3">
+            <uix:NGetText DisplayName="Get Text 'Next Accounts Due'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyNextAccount]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/07687209/!obac-uk-limited" DesignTimeRectangle="458, 665, 187, 32" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'September 2024'" FullSelectorArgument="&lt;webctrl parentid='companyInformation' tag='P' class='about-card-text mb-0 ' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='companyInformation' tag='P' class='about-card-text mb-0 ' parentclass='about-card-field' type='' /&gt;" Guid="120b7ba7-9249-478a-b585-1b937102f72a" ImageBase64="" InformativeScreenshot="b95b3e32de75d05cf779ccbf57683af1.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="458, 635, 187, 30" ElementType="Text" FriendlyName="'Next Accounts Due'" FullSelectorArgument="&lt;webctrl parentid='companyInformation' tag='P' aaname='Next Accounts Due' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='companyInformation' tag='P' aaname='Next Accounts Due' type='' class='about-card-label mb-0' check:text='Next Accounts Due' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[companyDirectorsDT]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='OFFICER' ReferenceName='OFFICER' ReferenceIdx='0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='OFFICER Url' ReferenceName='OFFICER Url' ReferenceIdx='1'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='COUNTRY' ReferenceName='COUNTRY' ReferenceIdx='2'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='AGE' ReferenceName='AGE' ReferenceIdx='3'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='START' ReferenceName='START' ReferenceIdx='4'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='END' ReferenceName='END' ReferenceIdx='5'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='ROLE' ReferenceName='ROLE' ReferenceIdx='6'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='OFFICER' attr='fulltext' name2='OFFICER Url' attr2='href' /&gt;&lt;column name='COUNTRY' attr='fulltext' /&gt;&lt;column name='AGE' attr='fulltext' /&gt;&lt;column name='START' attr='fulltext' /&gt;&lt;column name='END' attr='fulltext' /&gt;&lt;column name='ROLE' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="532.6666666666666,160" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[companyDirectorsDT]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Table' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='OFFICER' ReferenceName='OFFICER' ReferenceIdx='0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='OFFICER Url' ReferenceName='OFFICER Url' ReferenceIdx='1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='COUNTRY' ReferenceName='COUNTRY' ReferenceIdx='2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='AGE' ReferenceName='AGE' ReferenceIdx='3'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='START' ReferenceName='START' ReferenceIdx='4'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='END' ReferenceName='END' ReferenceIdx='5'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='ROLE' ReferenceName='ROLE' ReferenceIdx='6'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract-table get_columns_name='1' get_empty_columns='1' columns_name_source='Longest'&gt;&lt;column name='OFFICER' attr='fulltext' name2='OFFICER Url' attr2='href' /&gt;&lt;column name='COUNTRY' attr='fulltext' /&gt;&lt;column name='AGE' attr='fulltext' /&gt;&lt;column name='START' attr='fulltext' /&gt;&lt;column name='END' attr='fulltext' /&gt;&lt;column name='ROLE' attr='fulltext' /&gt;&lt;/extract-table&gt;" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" Version="V3">
               <uix:NExtractData.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="82, 557, 1756, 168" DesignTimeScaleFactor="1.5" FriendlyName="'officercountryagestarte…'" FullSelectorArgument="&lt;webctrl id='directorListTable' tag='TABLE' /&gt;" Guid="95625e63-ace4-4a90-9049-201d4eb8ba80" InformativeScreenshot="776e9d128c3f6a7ecca9a79343b70717.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:OutputDataTable DataTable="[companyDirectorsDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="532.6666666666666,82" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[outputDirectorsInfo]" />
-            <uix:NGetText DisplayName="Get Text 'turnover'" sap:VirtualizedContainerService.HintSize="532.6666666666666,159.33333333333334" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyTurnover]" Version="V3">
+            <ui:OutputDataTable DataTable="[companyDirectorsDT]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="532,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[outputDirectorsInfo]" />
+            <uix:NGetText DisplayName="Get Text 'turnover'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyTurnover]" Version="V3">
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/09102217/%22dami.mb%22-ltd" DesignTimeRectangle="95, 708, 58, 27" DesignTimeScaleFactor="1.5" ElementType="Text" FriendlyName="'97.4k'" FullSelectorArgument="&lt;webctrl parentid='turnover_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' parentclass='d-inline-block align-text-top' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='turnover_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' parentclass='d-inline-block align-text-top' type='' /&gt;" Guid="10e84e3d-5c25-402c-a2f4-7848f5c67cc1" ImageBase64="" InformativeScreenshot="5d7137dc045e243cb98394d55623fc3a.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="95, 681, 148, 26" ElementType="Text" FriendlyName="'turnover'" FullSelectorArgument="&lt;webctrl tag='P' aaname='turnover' visibleinnertext='TURNOVER' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='turnover' visibleinnertext='TURNOVER' type='' class='text-uppercase sub-card-name mb-0' check:text='turnover' /&gt;" SearchSteps="Selector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NGetText.Target>
             </uix:NGetText>
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532.6666666666666,86.66666666666667" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[companyTurnover]" />
+            <uix:NGetText DisplayName="Get Text 'operating profit'" sap:VirtualizedContainerService.HintSize="532,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyOperatingProfit]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/SC412218/%22m-shine%22-cleaning-service-limited" DesignTimeRectangle="428, 632, 31, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'-249'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' parentid='operating_profit_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='operating_profit_charts' tag='P' class='sub-card-value mb-0 yellow-color-text' /&gt;" Guid="9cd0d6f0-f428-46bd-a1f6-9622e0e40dba" ImageBase64="" InformativeScreenshot="21637a24ac2dd0e220d413d20d2240ef.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="428, 614, 119, 17" ElementType="Text" FriendlyName="'operating profit'" FullSelectorArgument="&lt;webctrl parentid='operating_profit_charts' tag='P' aaname='operating profit' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='operating_profit_charts' tag='P' aaname='operating profit' type='' class='text-uppercase sub-card-name mb-0' check:text='operating profit' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="532,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[companyOperatingProfit]" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
