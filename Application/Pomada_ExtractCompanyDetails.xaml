@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1192,4016</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>896,4213</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Pomada_ExtractCompanyDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -112,19 +112,19 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="668,3951" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Pomada_ExtractCompanyDetails" sap:VirtualizedContainerService.HintSize="668,4148" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="606,3840" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Edge: Power Search | Pomanda" sap:VirtualizedContainerService.HintSize="606,4037" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" IsIncognito="True" OpenMode="Always" ScopeGuid="5debac8d-dad1-436f-b967-10c38537ada8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,3623" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,3820" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Default="&quot;PERFECTCLEAN&quot; LIMITED" Name="companyName" />
               <Variable x:TypeArguments="x:String" Name="companyNumber" />
@@ -136,6 +136,7 @@
               <Variable x:TypeArguments="x:String" Name="companyOperatingProfit" />
               <Variable x:TypeArguments="x:String" Name="companyGrossMargin" />
               <Variable x:TypeArguments="x:String" Name="companyDirectors" />
+              <Variable x:TypeArguments="x:String" Name="companyPhoneNumber" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -196,8 +197,19 @@
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/14413082/!-heal-ur-tech-ltd" CvTextArea="419, 419, 7, 13" CvType="AnyWordGroup" DesignTimeRectangle="421, 414, 5, 22" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'-'" FullSelectorArgument="&lt;webctrl parentid='companyInformation' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;span' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='companyInformation' parentclass='about-card-field' /&gt;" Guid="1df9fd5f-075e-450b-9c11-6961b859d0d8" ImageBase64="" InformativeScreenshot="9377dcb52db80c46291291a71586a1d4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="419, 394, 51, 12" CvTextArgument="Website" CvType="Text" DesignTimeRectangle="421, 392, 134, 20" ElementType="Text" FriendlyName="'Website'" FullSelectorArgument="&lt;webctrl tag='P' aaname='Website' parentclass='about-card-field' parentid='companyInformation' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='Website' parentclass='about-card-field' parentid='companyInformation' type='' class='about-card-label mb-0' check:text='Website' /&gt;" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NGetText.Target>
+            </uix:NGetText>
+            <uix:NGetText DisplayName="Get Text 'Telephone'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="5debac8d-dad1-436f-b967-10c38537ada8" TextString="[companyPhoneNumber]" Version="V3">
+              <uix:NGetText.Target>
+                <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/14413082/!-heal-ur-tech-ltd" DesignTimeRectangle="571, 413, 149, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'-'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' isleaf='1' parentid='companyInformation' class='about-card-text mb-0' tag='P' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='companyInformation' class='about-card-text mb-0' tag='P' /&gt;" Guid="9f3e2d4e-efd2-44ab-b712-93d974cd0c23" ImageBase64="" InformativeScreenshot="3e78772d7f549505aadf7a0cfd16d94b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="571, 392, 149, 20" ElementType="Text" FriendlyName="'Telephone'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p' isleaf='1' parentid='companyInformation' tag='P' aaname='Telephone' class='about-card-label mb-0' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='companyInformation' tag='P' aaname='Telephone' class='about-card-label mb-0' check:text='Telephone' /&gt;" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
@@ -207,7 +219,7 @@
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://pomanda.com/company/07687209/!obac-uk-limited" DesignTimeRectangle="274, 477, 280, 20" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'unit 9'" FullSelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' class='about-card-text mb-0 text-capitalize' parentclass='about-card-field' type='' /&gt;" Guid="f05404c0-d11a-4240-b8df-fea411873dcf" ImageBase64="" InformativeScreenshot="cee2b3218c14f4bfbb0b7a436bb33bf9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='* - Company Profile - Pomanda' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target DesignTimeRectangle="274, 446, 280, 20" ElementType="Text" FriendlyName="'Registered Address'" FullSelectorArgument="&lt;webctrl tag='P' aaname='Registered Address' parentclass='about-card-field' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='P' aaname='Registered Address' parentclass='about-card-field' type='' class='about-card-label mb-0' check:text='Registered Address' /&gt;" ImageBase64="" SearchSteps="Selector, FuzzySelector" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -311,7 +323,7 @@
               </ui:CommentOut.Body>
             </ui:CommentOut>
             <ui:BuildDataTable DataTable="[out_companyDetailsDT]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Number&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Address&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Website&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;TelephoneNumber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;NextAccountsDue&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Directors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Turnover&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;OperatingProfit&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;GrossMargin&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{companyName, companyNumber, companyAddress, companyWebsite, companyNextAccount, companyDirectors, companyTurnover, companyOperatingProfit, companyGrossMargin}]" DataTable="[out_companyDetailsDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+            <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{companyName, companyNumber, companyAddress, companyWebsite, companyPhoneNumber ,companyNextAccount, companyDirectors, companyTurnover, companyOperatingProfit, companyGrossMargin}]" DataTable="[out_companyDetailsDT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>
